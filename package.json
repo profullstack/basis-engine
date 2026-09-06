@@ -1,0 +1,27 @@
+{
+  "name": "@profullstack/basis-engine",
+  "version": "0.1.0",
+  "description": "Wallet-by-wallet cost basis tracking for digital assets (Rev. Proc. 2024-28), producing Form 8949 rows and Schedule D totals.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Profullstack",
+  "repository": { "type": "git", "url": "git+https://github.com/profullstack/basis-engine.git" },
+  "keywords": ["tax", "cost-basis", "form-8949", "schedule-d", "crypto", "1099-da", "fifo", "hifo", "accounting"],
+  "engines": { "node": ">=20" },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
